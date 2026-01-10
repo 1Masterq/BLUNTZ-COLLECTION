@@ -1,0 +1,235 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #877c87;
+      color: #222;
+    }
+
+    /* ===== NAVBAR ===== */
+    header {
+      background: #111;
+      color: #fff;
+      padding: 15px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #f39c12;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav ul li {
+      margin-left: 20px;
+    }
+
+    .nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* ========MOBILE MENU======= */
+    .menu-toggle{
+      display:none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .bar{
+      width:25px;
+      height: 3px;
+      background: #ccc;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      .nav-link{
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background:#111;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        display: none;
+        padding: 20px 0;
+      }
+
+      .nav-link.active{
+     display:flex;
+      }
+
+      .menu-toggle{
+        display: flex;
+      }
+    }
+    /* ===== HERO ===== */
+    .hero {
+      height: 250vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+      transition: background-image 1s ease-in-out;
+    }
+
+    .hero-content {
+      background: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 5px;
+      color: #fff;
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .hero-content p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    /* ===== ABOUT ===== */
+    .about p {
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .more-text {
+      display: none;
+    }
+
+    .read-btn {
+      display: block;
+      margin: 15px auto;
+      padding: 10px 20px;
+      background: #f39c12;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* ===== Shop ===== */
+    .causes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .shop{
+      background: #b8b8b8;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .shop h3 {
+      margin-bottom: 10px;
+      color: #f39c12;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact form {
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .contact button {
+      width: 100%;
+      padding: 10px;
+      background: #111;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width: 768px) {
+      .nav ul {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #111;
+        flex-direction: column;
+        display: none;
+      }
+
+      .nav ul.show {
+        display: block;
+      }
+
+      .nav ul li {
+        margin: 15px 0;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  
