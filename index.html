@@ -7,20 +7,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Navigation section-->
+<div class="nav">
+  <div class="brand">
+    <img src="./IMG/img.jpg" alt="BLUNTZ Logo" class="nav-logo">
+    <div class="logo">BLUNTZ Collection</div>
+  </div>
 
-  <!-- NAVBAR -->
-  <header>
-    <div class="nav">
-      <div class="logo">BLUNTZ Collection</div>
-      <div class="menu-toggle" id="menuToggle">☰</div>
-      <ul id="navMenu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#shop"> Shop (or Collection)</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </header>
+  <div class="menu-toggle" id="menuToggle">☰</div>
+
+  <ul id="navMenu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
 
   <!-- HERO -->
   <div class="hero" id="home">
@@ -43,24 +45,67 @@
     <button class="read-btn" id="readBtn">Read More</button>
   </section>
 
-  <!-- SHOP -->
-  <section id="shop">
-    <h2>SHOP</h2>
-    <div class="shop">
-      <div class="shop">
-        <h3>Human Rights</h3>
-        <p>Standing against injustice and abuse.</p>
+ <!-- SHOP -->
+<section id="shop">
+  <h2>SHOP</h2>
+
+  <!-- MEN -->
+  <h3 class="shop-title">Men</h3>
+  <div class="slider-container">
+    <button class="slide-btn prev" onclick="slideShop('men', -1)">❮</button>
+
+    <div class="slider-track" id="menSlider">
+      <div class="slide">
+        <img src="./IMG/img 1.jpg">
+        <p>Men Hoodie</p>
       </div>
-      <div class="shop">
-        <h3>Child Protection</h3>
-        <p>Giving children a safe and hopeful future.</p>
-      </div>
-      <div class="shop">
-        <h3>Community Support</h3>
-        <p>Helping vulnerable communities grow.</p>
+      <div class="slide">
+        <img src="./IMG/img 2.jpg">
+        <p>Men T-Shirt</p>
       </div>
     </div>
-  </section>
+
+    <button class="slide-btn next" onclick="slideShop('men', 1)">❯</button>
+  </div>
+
+  <!-- WOMEN -->
+  <h3 class="shop-title">Women</h3>
+  <div class="slider-container">
+    <button class="slide-btn prev" onclick="slideShop('women', -1)">❮</button>
+
+    <div class="slider-track" id="womenSlider">
+      <div class="slide">
+        <img src="./IMG/img 3.jpg">
+        <p>Women Hoodie</p>
+      </div>
+      <div class="slide">
+        <img src="./IMG/img 4.jpg">
+        <p>Women T-Shirt</p>
+      </div>
+    </div>
+
+    <button class="slide-btn next" onclick="slideShop('women', 1)">❯</button>
+  </div>
+
+  <!-- CHILDREN -->
+  <h3 class="shop-title">Children</h3>
+  <div class="slider-container">
+    <button class="slide-btn prev" onclick="slideShop('kids', -1)">❮</button>
+
+    <div class="slider-track" id="kidsSlider">
+      <div class="slide">
+        <img src="./IMG/img 5.jpg">
+        <p>Kids Hoodie</p>
+      </div>
+      <div class="slide">
+        <img src="./IMG/img 6.jpg">
+        <p>Kids T-Shirt</p>
+      </div>
+    </div>
+
+    <button class="slide-btn next" onclick="slideShop('kids', 1)">❯</button>
+  </div>
+</section>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
