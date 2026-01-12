@@ -1,5 +1,4 @@
-
-    /* MOBILE MENU */
+/* MOBILE MENU */
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
 
@@ -35,4 +34,21 @@
       hero.style.backgroundImage = `url(${images[index]})`;
       index = (index + 1) % images.length;
     }, 4000);
+    const shopIndex = {
+  men: 0,
+  women: 0,
+  kids: 0
+};
+
+function slideShop(type, direction) {
+  const slider = document.getElementById(type + "Slider");
+  const slides = slider.children.length;
+
+  shopIndex[type] += direction;
+
+  if (shopIndex[type] < 0) shopIndex[type] = slides - 1;
+  if (shopIndex[type] >= slides) shopIndex[type] = 0;
+
+  slider.style.transform = `translateX(-${shopIndex[type] * 100}%)`;
+}
   
