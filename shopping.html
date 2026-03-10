@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BLUNTZ Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+
+body{background:#f5f5f5}
+
+nav{
+  background:#000;
+  color:#fff;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+.product{
+  background:#fff;
+  padding:15px;
+  border-radius:8px;
+  text-align:center;
+}
+
+.product img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+button{
+  background:#000;
+  color:#fff;
+  border:none;
+  padding:10px;
+  cursor:pointer;
+  border-radius:5px;
+}
+/* ===== FOOTER ===== */
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>BLUNTZ</h2>
+  <a href="cart.html">🛒 Cart</a>
+</nav>
+<section class="products" id="products"></section>
+ <!-- FOOTER -->
+ <footer>
+  <p>&copy; 2026 BLUNTZ Collection. All rights reserved.</p>
+</footer>
+
+<script>
+const products = [
+ {id:1,name:"BLUNTZ Hoodie",price:15000,img:"./IMG/img 1.jpeg"},
+ {id:2,name:"BLUNTZ T-Shirt",price:8000,img:"./IMG/img 3.jpeg"},
+ {id:3,name:"BLUNTZ Black Tee",price:9000,img:"./IMG/img 5.jpeg"}
+];
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const container = document.getElementById("products");
+
+products.forEach(p=>{
+  container.innerHTML += `
+    <div class="product">
+      <img src="${p.img}">
+      <h3>${p.name}</h3>
+      <p>₦${p.price}</p>
+      <button onclick="addToCart(${p.id})">Add to Cart</button>
+    </div>
+  `;
+});
+
+function addToCart(id){
+  const item = cart.find(i=>i.id===id);
+  if(item){
+    item.qty++;
+  }else{
+    const product = products.find(p=>p.id===id);
+    cart.push({...product, qty:1});
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Added to cart");
+}
+</script>
+
+</body>
+</html>
